@@ -13,6 +13,7 @@ import {
   FaMobile,
   FaCog
 } from "react-icons/fa";
+import Image from "next/image";
 
 interface MenuItem {
   name: string;
@@ -22,7 +23,6 @@ interface MenuItem {
 
 interface SidebarProps {
   className?: string;
-  logoUrl?: string;
 }
 
 const menuItems: MenuItem[] = [
@@ -36,10 +36,7 @@ const menuItems: MenuItem[] = [
   { name: "Configuración", icon: <FaCog />, path: "/settings" }
 ];
 
-const Sidebar: React.FC<SidebarProps> = ({
-  className = "",
-  logoUrl = "/Logo.svg"
-}) => {
+const Sidebar: React.FC<SidebarProps> = ({ className = "" }) => {
   const pathname = usePathname();
 
   return (
@@ -48,7 +45,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     >
       <div className="flex p-6 items-center justify-center">
         <Link href="/">
-          <img src="/Logo.svg" alt="Logo" className="h-16" />
+          <Image src="/assets/Logo.svg" alt="Logo" width={100} height={100} />
         </Link>
       </div>
 
