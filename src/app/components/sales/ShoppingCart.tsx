@@ -13,6 +13,7 @@ import {
   FaChevronLeft,
   FaTrashAlt
 } from "react-icons/fa";
+import Image from "next/image";
 
 interface CartProduct {
   id: string;
@@ -38,7 +39,6 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
   const [showCheckoutStep, setShowCheckoutStep] = useState<
     "products" | "payment" | "change" | "ticketQuestion" | "ticket"
   >("products");
-  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const [isCartVisible, setIsCartVisible] = useState(false);
   const [buttonOffset, setButtonOffset] = useState("0px");
   const cartRef = useRef<HTMLDivElement>(null);
@@ -153,8 +153,6 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
 
   // Función para generar e imprimir el PDF
   const generateAndPrintPdf = () => {
-    setIsGeneratingPdf(true);
-
     try {
       // Crear un nuevo documento PDF con ancho máximo de 420px
       // Convertir 420px a mm (1px ≈ 0.264583mm)
@@ -337,12 +335,10 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
 
       // Simular que la impresión fue exitosa
       setTimeout(() => {
-        setIsGeneratingPdf(false);
         handleCloseTicket();
       }, 2000);
     } catch (error) {
       console.error("Error al generar PDF:", error);
-      setIsGeneratingPdf(false);
       alert("Error al generar el ticket. Intente nuevamente.");
     }
   };
@@ -352,7 +348,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
     if (showCheckoutStep === "ticket") {
       generateAndPrintPdf();
     }
-  }, [showCheckoutStep]);
+  }, [showCheckoutStep, generateAndPrintPdf]);
 
   // Función para vaciar el carrito
   const handleClearCart = () => {
