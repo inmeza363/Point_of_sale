@@ -1,12 +1,11 @@
 "use client";
 
-import "./globals.css";
-import Sidebar from "./components/layout/Sidebar";
-import Topbar from "./components/layout/Topbar";
-import HomePage from "./components/pages/HomePage";
-import { CURRENT_USER } from "../data/mock";
+import "../globals.css";
+import Sidebar from "../components/layout/Sidebar";
+import Topbar from "../components/layout/Topbar";
+import { CURRENT_USER } from "../../data/mock";
 
-export default function Page() {
+export default function Registers() {
   return (
     <main className="flex h-screen">
       <Sidebar />
@@ -18,8 +17,9 @@ export default function Page() {
           onNotificationsClick={() => console.log("Notificaciones")}
           onProfileClick={() => console.log("Perfil")}
         />
-        <div className="overflow-auto h-[calc(100vh-4rem)]">
-          <HomePage />
+        <div className="pt-20 h-[calc(100vh-4rem)] overflow-y-auto p-6">
+          <h1 className="text-2xl font-bold mb-6">Cajas</h1>
+          <p>Contenido de la página de Cajas</p>
         </div>
       </div>
     </main>

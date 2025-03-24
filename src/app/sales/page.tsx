@@ -1,12 +1,12 @@
 "use client";
 
-import "./globals.css";
-import Sidebar from "./components/layout/Sidebar";
-import Topbar from "./components/layout/Topbar";
-import HomePage from "./components/pages/HomePage";
-import { CURRENT_USER } from "../data/mock";
+import "../globals.css";
+import Sidebar from "../components/layout/Sidebar";
+import Topbar from "../components/layout/Topbar";
+import { SalesPage } from "../components/sales";
+import { CURRENT_USER } from "../../data/mock";
 
-export default function Page() {
+export default function Sales() {
   return (
     <main className="flex h-screen">
       <Sidebar />
@@ -18,8 +18,8 @@ export default function Page() {
           onNotificationsClick={() => console.log("Notificaciones")}
           onProfileClick={() => console.log("Perfil")}
         />
-        <div className="overflow-auto h-[calc(100vh-4rem)]">
-          <HomePage />
+        <div className="h-[calc(100vh-4rem)] overflow-hidden">
+          <SalesPage />
         </div>
       </div>
     </main>
