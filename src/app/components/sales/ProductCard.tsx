@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { FaPlus, FaCheck } from "react-icons/fa";
 
 interface ProductCardProps {

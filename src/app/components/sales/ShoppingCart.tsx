@@ -233,11 +233,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
       // Posiciones de las columnas
       const cantCol = leftCol + 55;
       const precioCol = cantCol + 15;
-      const importeCol = rightCol - 10;
 
       doc.text("Cant.", cantCol, y, { align: "center" });
       doc.text("Precio", precioCol, y, { align: "right" });
-      doc.text("Importe", rightCol, y, { align: "right" });
 
       // Línea separadora de encabezados
       y += 2;

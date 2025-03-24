@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useCallback } from "react";
 import { FaBell, FaUser } from "react-icons/fa";
 import { SearchBar } from "../ui/SearchBar";
 

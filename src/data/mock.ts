@@ -77,10 +77,7 @@ export const CURRENT_USER: User = {
 };
 
 // Función auxiliar para crear los iconos
-const createIcon = (
-  IconComponent: React.ComponentType<any>,
-  className: string
-) => {
+const createIcon = (IconComponent: React.ComponentType, className: string) => {
   return React.createElement(IconComponent, { className });
 };
 
